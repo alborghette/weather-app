@@ -1,0 +1,45 @@
+
+/* Class = "UIButton"; normalTitle = "Entre com o Facebook"; ObjectID = "3Xh-6d-Xx3"; */
+"3Xh-6d-Xx3.normalTitle" = "Entre com o Facebook";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "5kV-Ad-VZM"; */
+"5kV-Ad-VZM.normalTitle" = "Logout";
+
+/* Class = "UILabel"; text = "Umidade"; ObjectID = "6ll-e1-nTQ"; */
+"6ll-e1-nTQ.text" = "Umidade";
+
+/* Class = "UITabBarItem"; title = "Item 1"; ObjectID = "J2N-DP-0Mm"; */
+"J2N-DP-0Mm.title" = "Item 1";
+
+/* Class = "UILabel"; text = "Máxima"; ObjectID = "Qsj-hd-tKs"; */
+"Qsj-hd-tKs.text" = "Máxima";
+
+/* Class = "UILabel"; text = "Mímina"; ObjectID = "Tm5-XR-Tvq"; */
+"Tm5-XR-Tvq.text" = "Mímina";
+
+/* Class = "UILabel"; text = "Mímina"; ObjectID = "gK6-vL-V7Z"; */
+"gK6-vL-V7Z.text" = "Mímina";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "gQf-3q-4xM"; */
+"gQf-3q-4xM.title" = "Item";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "gsU-IR-tig"; */
+"gsU-IR-tig.title" = "Item";
+
+/* Class = "UILabel"; text = "Umidade"; ObjectID = "irC-1P-qio"; */
+"irC-1P-qio.text" = "Umidade";
+
+/* Class = "UILabel"; text = "Máxima"; ObjectID = "lSa-9W-5g7"; */
+"lSa-9W-5g7.text" = "Máxima";
+
+/* Class = "UILabel"; text = "Weather"; ObjectID = "owY-TX-oeG"; */
+"owY-TX-oeG.text" = "Weather";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "pzg-Qw-Mob"; */
+"pzg-Qw-Mob.title" = "Item";
+
+/* Class = "UITabBarItem"; title = "Item 2"; ObjectID = "v26-KB-iFn"; */
+"v26-KB-iFn.title" = "Item 2";
+
+/* Class = "UITabBarItem"; title = "Item 3"; ObjectID = "zlt-ed-t0f"; */
+"zlt-ed-t0f.title" = "Item 3";

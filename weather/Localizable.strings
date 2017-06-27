@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  weather
+
+  Created by Murilo Alborghette on 26/06/17.
+  Copyright © 2017 Murilo Alborghette. All rights reserved.
+*/
+
+"enter-with-facebook" = "Entre com o Facebook";
+"attention"		= "Atenção";
+"ok"			= "Ok";
+"login-denied"	= "Que pena, sem seu login não conseguimos ir para a próxima etapa.";
+"request-error" = "Ocorreu algum problema na operação.";
+"your-location" = "Sua Localização";
+"profile"		= "Perfil";
+"london"		= "Londres";
+"logout"		= "Logout";

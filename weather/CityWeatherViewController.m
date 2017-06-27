@@ -50,9 +50,9 @@
 	self.userCity.text = cityWeather.city.name;
 	
 	if (cityWeather.temperatures.firstObject != nil) {
-		self.temperatureCity.text = [cityWeather.temperatures.firstObject.temperature stringValue];
-		self.maxTemperature.text = [cityWeather.temperatures.firstObject.maxTemp stringValue];
-		self.minTemperature.text = [cityWeather.temperatures.firstObject.minTemp stringValue];
+		self.temperatureCity.text = [[cityWeather.temperatures.firstObject.temperature stringValue] stringByAppendingString:@" ºC"];
+		self.maxTemperature.text = [[cityWeather.temperatures.firstObject.maxTemp stringValue] stringByAppendingString:@" ºC"];
+		self.minTemperature.text = [[cityWeather.temperatures.firstObject.minTemp stringValue] stringByAppendingString:@" ºC"];
 		self.humidity.text = [NSString stringWithFormat:@"%ld%%", cityWeather.temperatures.firstObject.humidity];
 	}
 	
@@ -61,15 +61,5 @@
 		self.weatherDescription.text = cityWeather.weathers.firstObject.descriptionWeather;
 	}
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

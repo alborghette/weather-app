@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
 @property (weak, nonatomic) IBOutlet UILabel *userName;
+@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 
 - (IBAction)logout:(id)sender;
 @end

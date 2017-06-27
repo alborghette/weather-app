@@ -10,6 +10,7 @@
 #import "SVProgressHUD.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "Alerts.h"
 
 @interface LoginViewController ()
 
@@ -23,9 +24,7 @@ NSString *const kFacebookProfilePermission		   = @"public_profile";
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	if ([FBSDKAccessToken currentAccessToken]) {
-		[self performSegueWithIdentifier:kMainViewControllerSegueIdentifier sender:self];
-	}
+	[self.loginButton setTitle:NSLocalizedString(@"enter-with-facebook", nil) forState:UIControlStateNormal];
 }
 
 
@@ -34,13 +33,15 @@ NSString *const kFacebookProfilePermission		   = @"public_profile";
 	// Dispose of any resources that can be recreated.
 }
 
-- (void) showAlertWith:(NSString *)message {
-	UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Atenção" message:message preferredStyle:UIAlertControllerStyleAlert];
-	UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleDefault handler:nil];
-	[alert addAction:okAction];
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
 	
-	[self presentViewController:alert animated:YES completion:nil];
+	if ([FBSDKAccessToken currentAccessToken]) {
+		[self performSegueWithIdentifier:kMainViewControllerSegueIdentifier sender:self];
+	}
 }
+
+
 
 - (IBAction)loginButtonTouched {
 	
@@ -52,11 +53,10 @@ NSString *const kFacebookProfilePermission		   = @"public_profile";
 								   handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
 									
 									   if (error) {
-										   [weakSelf showAlertWith:@"Ocorreu algum problema na operação."];
+										   [Alerts showAlertWith:NSLocalizedString(@"request-error", nil) inViewController:weakSelf];
 									   } else if (result.isCancelled) {
-										   [weakSelf showAlertWith:@"Que pena, sem seu login não conseguimos ir para a próxima etapa."];
+										   [Alerts showAlertWith:NSLocalizedString(@"login-denied", nil) inViewController:weakSelf];
 									   } else {
-										   
 										   [weakSelf performSegueWithIdentifier:kMainViewControllerSegueIdentifier sender:self];
 									   }
 									   

@@ -10,11 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Sua Localização-->
         <scene sceneID="Phb-7n-vBj">
             <objects>
                 <navigationController id="ydT-ll-otM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="here-icon" id="pzg-Qw-Mob"/>
+                    <tabBarItem key="tabBarItem" title="Sua Localização" image="here-icon" id="pzg-Qw-Mob"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pE5-jq-aRD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -30,7 +30,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -40,7 +40,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owY-TX-oeG">
-                                <rect key="frame" x="16" y="139" width="343" height="121"/>
+                                <rect key="frame" x="16" y="183" width="343" height="121"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="121" id="clR-o3-CSc"/>
                                 </constraints>
@@ -49,7 +49,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Xh-6d-Xx3">
-                                <rect key="frame" x="85" y="318" width="204" height="30"/>
+                                <rect key="frame" x="85" y="362" width="204" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="204" id="By6-ku-cNT"/>
                                     <constraint firstAttribute="height" constant="30" id="jG8-gW-2cR"/>
@@ -70,6 +70,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loginButton" destination="3Xh-6d-Xx3" id="jPq-GZ-CeA"/>
                         <segue destination="bvm-5F-McY" kind="show" identifier="mainViewControllerSegue" id="F79-Tj-Wxs"/>
                     </connections>
                 </viewController>
@@ -77,11 +78,11 @@
             </objects>
             <point key="canvasLocation" x="61.600000000000001" y="116.49175412293854"/>
         </scene>
-        <!--Item-->
+        <!--Perfil-->
         <scene sceneID="k6y-eR-72w">
             <objects>
                 <navigationController id="had-BK-RU4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="user-icon" id="gQf-3q-4xM"/>
+                    <tabBarItem key="tabBarItem" title="Perfil" image="user-icon" id="gQf-3q-4xM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Fa-mq-5MK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -173,6 +174,7 @@
                     <tabBarItem key="tabBarItem" title="Item 3" image="user-icon" id="zlt-ed-t0f"/>
                     <navigationItem key="navigationItem" id="347-Uf-tQn"/>
                     <connections>
+                        <outlet property="logoutButton" destination="5kV-Ad-VZM" id="yoM-az-QBL"/>
                         <outlet property="profilePicture" destination="RAf-XG-dSD" id="cnb-gK-rNs"/>
                         <outlet property="userName" destination="fLr-PK-1KH" id="97v-39-fcC"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="loginViewControllerSegue" id="NaP-0J-nF7"/>
@@ -359,11 +361,11 @@
             </objects>
             <point key="canvasLocation" x="2284" y="350"/>
         </scene>
-        <!--Item-->
+        <!--Londres-->
         <scene sceneID="L8v-8j-Jix">
             <objects>
                 <navigationController id="zzf-nF-lse" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="england-icon" id="gsU-IR-tig"/>
+                    <tabBarItem key="tabBarItem" title="Londres" image="england-icon" id="gsU-IR-tig"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mlp-6K-mEK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

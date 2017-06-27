@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.title = @"Sua Localização";
+	self.title = NSLocalizedString(@"your-location", nil);
 }
 
 - (void)didReceiveMemoryWarning {

@@ -20,7 +20,7 @@ static double const kLondonLongitude = -0.118092;
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.title = @"Londres";
+	self.title = NSLocalizedString(@"london", nil);
 }
 
 - (void)didReceiveMemoryWarning {

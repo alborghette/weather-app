@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CityWeatherViewController : UIViewController
+@interface CityWeatherViewController : UIViewController <UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UILabel *userCity;
 @property (weak, nonatomic) IBOutlet UILabel *weatherDescription;
@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *humidity;
 @property (weak, nonatomic) IBOutlet UILabel *maxTemperature;
 @property (weak, nonatomic) IBOutlet UILabel *minTemperature;
+
+@property (weak, nonatomic) IBOutlet UICollectionView *weekWeatherCollection;
 
 - (void)requestCityWeatherFromLatitude: (double)latitude andLongitude: (double)longitude;
 

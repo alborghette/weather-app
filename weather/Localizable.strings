@@ -15,3 +15,4 @@
 "profile"		= "Perfil";
 "london"		= "Londres";
 "logout"		= "Logout";
+"celsius-degrees" = "%@ ºC";

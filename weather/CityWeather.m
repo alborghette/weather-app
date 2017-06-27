@@ -13,7 +13,6 @@
 static NSString * const kList		 = @"list";
 static NSString * const kTemperature = @"main";
 static NSString * const kWeather	 = @"weather";
-static NSString * const kDate		 = @"dt_txt";
 static NSString * const kCityKey	 = @"city";
 
 - (instancetype)initWithDictionary: (NSDictionary *)json {
@@ -21,15 +20,6 @@ static NSString * const kCityKey	 = @"city";
 	self = [super init];
 	
 	if (self != nil) {
-		
-		NSDateFormatter *originFormat = [[NSDateFormatter alloc] init];
-		[originFormat setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-		[originFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-		
-		NSDateFormatter *toFormat = [[NSDateFormatter alloc] init];
-		[toFormat setDateFormat:@"dd"];
-		[toFormat setTimeZone:[NSTimeZone localTimeZone]];
-		
 		
 		if (json[kList] != nil && [json[kList] isKindOfClass:[NSArray class]]) {
 			NSMutableArray<WeatherTemperature *> *temperatures = [[NSMutableArray alloc] init];
@@ -45,14 +35,10 @@ static NSString * const kCityKey	 = @"city";
 					[weathers addObject: [[WeatherCondition alloc] initWithJson: weather.firstObject]];
 				}
 				
-				NSDate *dateAndHour = [originFormat dateFromString: jsonList[kDate]];
-				[dates addObject: [toFormat stringFromDate:dateAndHour]];
-				
 			}
 			
 			self.temperatures = temperatures;
 			self.weathers	  = weathers;
-			self.dates		  = dates;
 		}
 		
 		if (json[kCityKey] != nil) {

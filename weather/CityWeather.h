@@ -16,7 +16,6 @@
 @property City *city;
 @property NSArray<WeatherTemperature *> *temperatures;
 @property NSArray<WeatherCondition *> *weathers;
-@property NSArray<NSString *> *dates;
 
 - (instancetype)initWithDictionary: (NSDictionary *)json;
 

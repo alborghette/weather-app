@@ -25,6 +25,7 @@
 		62567D861F00ABB200FE0EAA /* WeatherTemperature.m in Sources */ = {isa = PBXBuildFile; fileRef = 62567D851F00ABB200FE0EAA /* WeatherTemperature.m */; };
 		62567D8A1F00ABC300FE0EAA /* WeatherCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 62567D891F00ABC300FE0EAA /* WeatherCondition.m */; };
 		62567D8E1F00AF1100FE0EAA /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 62567D8D1F00AF1100FE0EAA /* City.m */; };
+		626898C51F02126E00014B53 /* WeekWeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 626898C41F02126E00014B53 /* WeekWeatherCollectionViewCell.m */; };
 		62B868C41F01FBD000B4AB77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62B868C31F01FBD000B4AB77 /* Localizable.strings */; };
 		62B868CC1F01FD8100B4AB77 /* Alerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B868CB1F01FD8100B4AB77 /* Alerts.m */; };
 		7715503197B6C717D3206605 /* Pods_weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A1CA0C5A4227090790D708C /* Pods_weather.framework */; };
@@ -88,6 +89,8 @@
 		62567D891F00ABC300FE0EAA /* WeatherCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCondition.m; sourceTree = "<group>"; };
 		62567D8C1F00AF1100FE0EAA /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
 		62567D8D1F00AF1100FE0EAA /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		626898C31F02126E00014B53 /* WeekWeatherCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekWeatherCollectionViewCell.h; sourceTree = "<group>"; };
+		626898C41F02126E00014B53 /* WeekWeatherCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekWeatherCollectionViewCell.m; sourceTree = "<group>"; };
 		62B868C31F01FBD000B4AB77 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		62B868CA1F01FD8100B4AB77 /* Alerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alerts.h; sourceTree = "<group>"; };
 		62B868CB1F01FD8100B4AB77 /* Alerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alerts.m; sourceTree = "<group>"; };
@@ -219,6 +222,8 @@
 		62567D811F00A6BC00FE0EAA /* view */ = {
 			isa = PBXGroup;
 			children = (
+				626898C31F02126E00014B53 /* WeekWeatherCollectionViewCell.h */,
+				626898C41F02126E00014B53 /* WeekWeatherCollectionViewCell.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -422,6 +427,7 @@
 				62567D7E1F009F4F00FE0EAA /* CityWeather.m in Sources */,
 				622DFFA11F00EDC200931725 /* CityWeatherViewController.m in Sources */,
 				62567D8A1F00ABC300FE0EAA /* WeatherCondition.m in Sources */,
+				626898C51F02126E00014B53 /* WeekWeatherCollectionViewCell.m in Sources */,
 				62567D711F005FA900FE0EAA /* WeatherAPI.m in Sources */,
 				62567D861F00ABB200FE0EAA /* WeatherTemperature.m in Sources */,
 				62567D8E1F00AF1100FE0EAA /* City.m in Sources */,

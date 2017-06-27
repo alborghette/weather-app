@@ -10,16 +10,21 @@
 #import "WeatherAPI.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "WeekWeatherCollectionViewCell.h"
 
 @interface CityWeatherViewController ()
+
+@property CityWeather *cityWeather;
 
 @end
 
 @implementation CityWeatherViewController
 
+NSString *const kWeekWeatherCellIdentifier = @"WeekWeatherCellIdentifier";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+	self.weekWeatherCollection.dataSource = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,7 +40,9 @@
 	[WeatherAPI getWeatherFromLatitude:latitude Longitude:longitude success:^(CityWeather * cityWeather) {
 		
 		dispatch_async(dispatch_get_main_queue(), ^{
-			[weakSelf setupUIWithAPIInfo: cityWeather];
+			weakSelf.cityWeather = cityWeather;
+			[weakSelf setupUIWithAPIInfo];
+			[weakSelf.weekWeatherCollection reloadData];
 			[SVProgressHUD dismiss];
 		});
 		
@@ -46,20 +53,36 @@
 	}];
 }
 
-- (void)setupUIWithAPIInfo: (CityWeather *)cityWeather {
-	self.userCity.text = cityWeather.city.name;
+- (void)setupUIWithAPIInfo {
+	self.userCity.text = self.cityWeather.city.name;
 	
-	if (cityWeather.temperatures.firstObject != nil) {
-		self.temperatureCity.text = [[cityWeather.temperatures.firstObject.temperature stringValue] stringByAppendingString:@" ºC"];
-		self.maxTemperature.text = [[cityWeather.temperatures.firstObject.maxTemp stringValue] stringByAppendingString:@" ºC"];
-		self.minTemperature.text = [[cityWeather.temperatures.firstObject.minTemp stringValue] stringByAppendingString:@" ºC"];
-		self.humidity.text = [NSString stringWithFormat:@"%ld%%", cityWeather.temperatures.firstObject.humidity];
+	if (self.cityWeather.temperatures.firstObject != nil) {
+		self.temperatureCity.text = [NSString stringWithFormat:NSLocalizedString(@"celsius-degrees", nil), [self.cityWeather.temperatures.firstObject.temperature stringValue]];
+		self.maxTemperature.text = [NSString stringWithFormat:NSLocalizedString(@"celsius-degrees", nil), [self.cityWeather.temperatures.firstObject.maxTemp stringValue]];
+		self.minTemperature.text =[NSString stringWithFormat:NSLocalizedString(@"celsius-degrees", nil), [self.cityWeather.temperatures.firstObject.minTemp stringValue]];
+		self.humidity.text = [NSString stringWithFormat:@"%ld%%", self.cityWeather.temperatures.firstObject.humidity];
 	}
 	
-	if (cityWeather.weathers.firstObject != nil) {
-		[self.weatherIcon sd_setImageWithURL: [NSURL URLWithString: cityWeather.weathers.firstObject.getIconUrl] placeholderImage: [UIImage imageNamed: @"weather-icon-placeholder"]];
-		self.weatherDescription.text = cityWeather.weathers.firstObject.descriptionWeather;
+	if (self.cityWeather.weathers.firstObject != nil) {
+		[self.weatherIcon sd_setImageWithURL: [NSURL URLWithString: self.cityWeather.weathers.firstObject.getIconUrl] placeholderImage: [UIImage imageNamed: @"weather-icon-placeholder"]];
+		self.weatherDescription.text = self.cityWeather.weathers.firstObject.descriptionWeather;
 	}
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+	
+	if (self.cityWeather != nil) {
+		return self.cityWeather.weathers.count;
+	}
+	
+	return 0;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+	WeekWeatherCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kWeekWeatherCellIdentifier forIndexPath:indexPath];
+	[cell bind:self.cityWeather.temperatures[indexPath.row].temperature andWeatherIcon:self.cityWeather.weathers[indexPath.row].getIconUrl];
+	
+	return cell;
 }
 
 @end

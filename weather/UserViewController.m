@@ -28,6 +28,10 @@ NSString *const kLoginViewControllerSegue = @"loginViewControllerSegue";
 	self.title = NSLocalizedString(@"profile", nil);
 	[self.logoutButton setTitle:NSLocalizedString(@"logout", nil) forState:UIControlStateNormal];
 	
+	self.profilePicture.layer.cornerRadius	= self.profilePicture.frame.size.height/2;
+	self.profilePicture.layer.masksToBounds = YES;
+	self.profilePicture.layer.borderWidth	= 0;
+	
 	[self requestUserInfo];
 }
 
